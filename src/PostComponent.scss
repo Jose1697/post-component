@@ -1,0 +1,44 @@
+@import "node_modules/@bbva-web-components/bbva-foundations-sass/main";
+
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+:host([hidden]), [hidden] {
+  display: none !important;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.postDetail{
+  display: flex;
+}
+
+bbva-web-card-product{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.coments-container{
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  width: 50%;
+  padding: 2%;
+}
+.coments{
+  height: 90%;
+  overflow: auto;
+}
+.coment{
+  margin-bottom: 2%;
+}
+
+.input{
+  display: flex;
+}
+
+bbva-web-form-text{
+  width: 70%;
+  margin-right: 4%;
+}
