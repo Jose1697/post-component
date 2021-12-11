@@ -17,6 +17,7 @@ export default css`:host {
 
 .postDetail {
   display: flex;
+  justify-content: center;
 }
 
 bbva-web-card-product {
