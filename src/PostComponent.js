@@ -35,7 +35,8 @@ export class PostComponent extends LitElement {
       date: { type: String },
       name: { type: String },
       description: { type: String },
-      coments: { type: Array }
+      coments: { type: Array },
+      coment: { type: String}
     };
   }
 
@@ -47,6 +48,22 @@ export class PostComponent extends LitElement {
     this.name = '';
     this.description = '';
     this.coments = [];
+    this.coment = '';
+  }
+
+  inputComent(ev){
+    console.log(ev.path[6].__value);
+    this.coment = ev.path[6].__value;
+  }
+
+  addComent(ev){
+    console.log(ev);
+    this.dispatchEvent(new CustomEvent('add-coment',{
+      bubbles: true,
+      composed: true,
+      detail: this.coment,
+    }))
+
   }
 
   static get styles() {
@@ -84,8 +101,8 @@ export class PostComponent extends LitElement {
           </div>
           
           <div class="input">
-            <bbva-web-form-text label="Ingrese su comentario" value=""></bbva-web-form-text> 
-            <bbva-web-button-default>Aceptar</bbva-web-button-default>
+            <bbva-web-form-text label="Ingrese su comentario" value="" @input="${this.inputComent}"></bbva-web-form-text> 
+            <bbva-web-button-default @click="${this.addComent}">Aceptar</bbva-web-button-default>
           </div>
         </div>
         
